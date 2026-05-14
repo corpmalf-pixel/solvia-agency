@@ -31,6 +31,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--mono);
+  overflow-x: hidden;
 }
 
 a {
@@ -44,7 +45,64 @@ a {
 }
 
 #app {
+  position: relative;
   min-height: 100vh;
+  isolation: isolate;
+}
+
+.background-stage {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+  background: #06070b;
+}
+
+.bg-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: 0.14;
+  mix-blend-mode: screen;
+  animation: drift 18s ease-in-out infinite;
+}
+
+.bg-orb-1 {
+  top: -12%;
+  left: -10%;
+  width: 38rem;
+  height: 38rem;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.32) 0%, rgba(0, 240, 255, 0.08) 42%, rgba(0, 240, 255, 0) 74%);
+}
+
+.bg-orb-2 {
+  top: 22%;
+  right: -12%;
+  width: 34rem;
+  height: 34rem;
+  background: radial-gradient(circle, rgba(240, 237, 232, 0.12) 0%, rgba(0, 240, 255, 0.05) 48%, rgba(0, 240, 255, 0) 76%);
+  animation-delay: -6s;
+}
+
+.bg-orb-3 {
+  bottom: -18%;
+  left: 26%;
+  width: 42rem;
+  height: 42rem;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.16) 0%, rgba(17, 17, 24, 0.12) 50%, rgba(10, 10, 15, 0) 75%);
+  animation-delay: -11s;
+}
+
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(circle at center, black 34%, transparent 88%);
+  opacity: 0.45;
 }
 
 .site-header {
@@ -56,12 +114,13 @@ a {
   justify-content: space-between;
   padding: 1.25rem 2rem;
   background: transparent;
-  transition: background-color 0.35s ease, border-color 0.35s ease;
+  transition: background-color 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
   border-bottom: 1px solid transparent;
 }
 
 .site-header.is-scrolled {
-  background: rgba(10, 10, 15, 0.94);
+  background: rgba(10, 10, 15, 0.78);
+  backdrop-filter: blur(14px);
   border-color: rgba(34, 34, 44, 0.95);
 }
 
@@ -107,6 +166,12 @@ a {
 .contact-links a:hover::after,
 .contact-links a:focus-visible::after {
   transform: scaleX(1);
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 .panel {
@@ -185,7 +250,7 @@ a {
 }
 
 .statement {
-  background: var(--bg-alt);
+  background: rgba(17, 17, 24, 0.68);
 }
 
 .statement-inner,
@@ -343,6 +408,17 @@ a {
   }
 }
 
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(0, 26px, 0) scale(1.06);
+  }
+}
+
 @media (max-width: 720px) {
   .site-header {
     padding: 1rem 1.1rem;
@@ -394,6 +470,14 @@ a {
   .why-copy,
   .contact-links a {
     font-size: 0.9rem;
+  }
+
+  .bg-orb-1,
+  .bg-orb-2,
+  .bg-orb-3 {
+    width: 24rem;
+    height: 24rem;
+    filter: blur(70px);
   }
 }
 

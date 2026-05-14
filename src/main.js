@@ -1,6 +1,13 @@
 import './style.css'
 
 document.querySelector('#app').innerHTML = `
+  <div class="background-stage" aria-hidden="true">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
   <header class="site-header" data-nav>
     <a class="brand" href="#hero" aria-label="Solvia home">Solvia</a>
     <a class="nav-link" href="#contact">Nous contacter</a>
