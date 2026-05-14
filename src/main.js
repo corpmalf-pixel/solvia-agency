@@ -9,18 +9,18 @@ document.querySelector('#app').innerHTML = `
   </div>
 
   <header class="site-header" data-nav>
-    <a class="brand" href="#hero" aria-label="Solvia home">Solvia</a>
+    <a class="brand" href="#hero" aria-label="Solvia home">SOLVIA</a>
     <a class="nav-link" href="#contact">Nous contacter</a>
   </header>
 
   <main>
     <section id="hero" class="panel hero reveal reveal-visible">
       <div class="hero-inner">
-        <p class="eyebrow">Agence web — Paris & France entière<span class="cursor" aria-hidden="true">_</span></p>
         <h1 class="hero-title" aria-label="La première impression, ça se construit.">
           <span class="title-line">La première impression,</span>
           <span class="title-line">ça se construit.</span>
         </h1>
+        <p class="eyebrow">Agence web — Paris & France entière<span class="cursor" aria-hidden="true">_</span></p>
       </div>
       <a class="scroll-indicator" href="#statement" aria-label="Descendre vers la suite">↓</a>
     </section>
@@ -95,7 +95,7 @@ const observer = new IntersectionObserver(
     })
   },
   {
-    threshold: 0.18,
+    threshold: 0.16,
   },
 )
 

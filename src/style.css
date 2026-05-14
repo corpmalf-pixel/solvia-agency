@@ -7,6 +7,7 @@
   --muted: rgba(240, 237, 232, 0.62);
   --line: #22222c;
   --accent: #00f0ff;
+  --header-h: 72px;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --mono: 'DM Mono', 'Space Mono', ui-monospace, monospace;
   color: var(--text);
@@ -42,6 +43,15 @@ a {
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+main,
+section {
+  width: 100%;
+}
+
+section {
+  scroll-margin-top: calc(var(--header-h) + 12px);
 }
 
 #app {
@@ -112,7 +122,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 2rem;
+  min-height: var(--header-h);
+  padding: 1.15rem 2rem;
   background: transparent;
   transition: background-color 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
   border-bottom: 1px solid transparent;
@@ -135,6 +146,7 @@ a {
 }
 
 .brand {
+  display: inline-block;
   font-size: 0.76rem;
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -145,6 +157,7 @@ a {
   font-size: 0.82rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-align: right;
 }
 
 .nav-link::after,
@@ -179,26 +192,29 @@ main,
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 7rem 2rem 4rem;
+  padding: calc(var(--header-h) + 3rem) 2rem 4rem;
 }
 
 .hero {
   position: relative;
-  padding-top: 6rem;
+  min-height: 100svh;
 }
 
 .hero-inner,
 .statement-inner,
 .why-inner,
-.contact-inner {
+.contact-inner,
+.services-list {
   width: min(1100px, 100%);
+  margin-inline: auto;
 }
 
 .hero-inner {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.1rem;
   align-items: flex-start;
+  justify-content: center;
 }
 
 .eyebrow {
@@ -221,11 +237,12 @@ main,
   font-weight: 600;
   line-height: 0.92;
   letter-spacing: -0.03em;
+  text-wrap: balance;
 }
 
 .hero-title {
-  font-size: clamp(4.25rem, 10vw, 9rem);
-  max-width: 11ch;
+  font-size: clamp(4rem, 9.6vw, 8.6rem);
+  max-width: 11.2ch;
 }
 
 .title-line {
@@ -242,7 +259,7 @@ main,
 .scroll-indicator {
   position: absolute;
   left: 50%;
-  bottom: 2rem;
+  bottom: 1.4rem;
   transform: translateX(-50%);
   font-size: 1.75rem;
   color: var(--muted);
@@ -279,18 +296,17 @@ main,
 }
 
 .services {
-  padding-top: 9rem;
+  padding-top: calc(var(--header-h) + 5rem);
 }
 
 .services-list {
-  width: min(1100px, 100%);
   border-top: 1px solid var(--line);
 }
 
 .service-row {
   position: relative;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 1.5rem;
   padding: 1.6rem 0;
@@ -300,9 +316,11 @@ main,
 .service-index {
   color: rgba(0, 240, 255, 0.7);
   font-size: 0.9rem;
+  white-space: nowrap;
 }
 
 .service-name {
+  min-width: 0;
   font-family: var(--serif);
   font-size: clamp(2rem, 4vw, 3.4rem);
   line-height: 1;
@@ -335,6 +353,10 @@ main,
   display: block;
 }
 
+.section-title-contact {
+  line-height: 0.98;
+}
+
 .why-copy {
   max-width: 34rem;
 }
@@ -350,6 +372,8 @@ main,
   position: relative;
   font-size: clamp(0.95rem, 1.1vw, 1rem);
   color: var(--text);
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .site-footer {
@@ -419,14 +443,34 @@ main,
   }
 }
 
+@media (max-width: 900px) {
+  .hero-title {
+    max-width: 10.8ch;
+  }
+
+  .service-row {
+    gap: 1rem;
+  }
+}
+
 @media (max-width: 720px) {
+  :root {
+    --header-h: 64px;
+  }
+
   .site-header {
     padding: 1rem 1.1rem;
+    gap: 1rem;
+  }
+
+  .brand,
+  .nav-link {
+    font-size: 0.72rem;
   }
 
   .panel {
     min-height: auto;
-    padding: 6.5rem 1.1rem 3rem;
+    padding: calc(var(--header-h) + 2.4rem) 1.1rem 3rem;
   }
 
   .hero {
@@ -435,17 +479,26 @@ main,
   }
 
   .hero-inner {
-    justify-content: center;
-    min-height: calc(100svh - 9rem);
+    min-height: calc(100svh - var(--header-h) - 5rem);
+    width: 100%;
   }
 
   .hero-title {
-    font-size: clamp(3.8rem, 15vw, 5.5rem);
+    font-size: clamp(3.4rem, 14vw, 5.3rem);
     max-width: 100%;
   }
 
+  .eyebrow {
+    max-width: 18rem;
+    line-height: 1.6;
+  }
+
   .statement-quote {
-    font-size: clamp(2.4rem, 11vw, 4rem);
+    font-size: clamp(2.35rem, 11vw, 4rem);
+  }
+
+  .services {
+    padding-top: calc(var(--header-h) + 3rem);
   }
 
   .service-row {
@@ -470,6 +523,10 @@ main,
   .why-copy,
   .contact-links a {
     font-size: 0.9rem;
+  }
+
+  .contact-links {
+    width: 100%;
   }
 
   .bg-orb-1,
