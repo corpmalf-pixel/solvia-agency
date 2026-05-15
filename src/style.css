@@ -209,7 +209,8 @@ main,
 }
 
 .hero-media-bg,
-.hero-media-overlay {
+.hero-media-overlay,
+.hero-paper-bg {
   position: absolute;
   inset: 0;
 }
@@ -224,6 +225,16 @@ main,
   transform: scale(var(--hero-bg-scale, 1));
   transform-origin: center;
   will-change: transform;
+}
+
+.hero-paper-bg {
+  z-index: 0;
+}
+
+.hero-paper-bg canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .hero-media-overlay {
