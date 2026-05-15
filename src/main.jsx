@@ -42,7 +42,7 @@ function App() {
           SOLVIA
         </a>
         <a className="nav-link" href="#contact">
-          Nous contacter
+          Contact
         </a>
       </header>
 
@@ -55,7 +55,7 @@ function App() {
               <span className="title-line">ça se construit.</span>
             </h1>
             <p className="eyebrow">
-              Agence web — Paris & France entière<span className="cursor" aria-hidden="true">_</span>
+              based in Paris made for the world<span className="cursor" aria-hidden="true">_</span>
             </p>
           </div>
           <a className="scroll-indicator" href="#statement" aria-label="Descendre vers la suite">
