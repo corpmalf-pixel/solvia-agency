@@ -72,7 +72,6 @@ section {
 .bg-orb {
   position: absolute;
   border-radius: 999px;
-  filter: blur(90px);
   opacity: 0.14;
   mix-blend-mode: screen;
   animation: drift 18s ease-in-out infinite;
@@ -534,7 +533,6 @@ main,
   .bg-orb-3 {
     width: 24rem;
     height: 24rem;
-    filter: blur(70px);
   }
 }
 
