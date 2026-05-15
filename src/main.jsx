@@ -55,7 +55,7 @@ function App() {
               <span className="title-line">ça se construit.</span>
             </h1>
             <p className="eyebrow">
-              based in Paris made for the world<span className="cursor" aria-hidden="true">_</span>
+              Based in Paris made for the world<span className="cursor" aria-hidden="true">_</span>
             </p>
           </div>
           <a className="scroll-indicator" href="#statement" aria-label="Descendre vers la suite">
