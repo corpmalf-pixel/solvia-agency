@@ -15,6 +15,10 @@ document.querySelector('#app').innerHTML = `
 
   <main>
     <section id="hero" class="panel hero reveal reveal-visible">
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-media-bg"></div>
+        <div class="hero-media-overlay"></div>
+      </div>
       <div class="hero-inner">
         <h1 class="hero-title" aria-label="La première impression, ça se construit.">
           <span class="title-line">La première impression,</span>

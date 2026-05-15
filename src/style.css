@@ -197,6 +197,39 @@ main,
 .hero {
   position: relative;
   min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-media-bg,
+.hero-media-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-media-bg {
+  background-color: transparent;
+  background-image: var(--hero-bg-image, none);
+  background-position: var(--hero-bg-position, center center);
+  background-repeat: no-repeat;
+  background-size: var(--hero-bg-size, cover);
+  opacity: var(--hero-bg-opacity, 1);
+  transform: scale(var(--hero-bg-scale, 1));
+  transform-origin: center;
+  will-change: transform;
+}
+
+.hero-media-overlay {
+  background:
+    linear-gradient(180deg, rgba(6, 7, 11, 0.28) 0%, rgba(6, 7, 11, 0.38) 38%, rgba(6, 7, 11, 0.72) 100%),
+    var(--hero-overlay, linear-gradient(135deg, rgba(10, 10, 15, 0.36), rgba(10, 10, 15, 0.12)));
 }
 
 .hero-inner,
@@ -209,6 +242,8 @@ main,
 }
 
 .hero-inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
