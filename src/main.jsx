@@ -9,17 +9,17 @@ function GradientBackground() {
       <div className="hero-paper-bg">
         <GrainGradient
           style={{ height: '100%', width: '100%' }}
-          colorBack="hsl(0, 0%, 0%)"
-          softness={0.76}
-          intensity={0.45}
+          colorBack="hsl(228, 26%, 6%)"
+          softness={0.92}
+          intensity={0.32}
           noise={0}
           shape="corners"
           offsetX={0}
           offsetY={0}
-          scale={1}
-          rotation={0}
-          speed={1}
-          colors={['hsl(14, 100%, 57%)', 'hsl(45, 100%, 51%)', 'hsl(340, 82%, 52%)']}
+          scale={1.08}
+          rotation={-8}
+          speed={0.35}
+          colors={['hsl(18, 92%, 56%)', 'hsl(42, 96%, 54%)', 'hsl(332, 78%, 50%)']}
         />
       </div>
       <div className="hero-media-overlay"></div>
