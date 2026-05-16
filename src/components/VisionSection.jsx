@@ -16,7 +16,7 @@ function VisionBackground() {
     <div className="vision-media" aria-hidden="true">
       <div className="vision-paper-bg">
         <GrainGradient
-          style={{ height: '100%', width: '100%' }}
+          style={{ height: '100%', width: '100%', transform: 'scaleX(-1)' }}
           colorBack="hsl(228, 26%, 6%)"
           softness={0.92}
           intensity={0.32}
@@ -25,7 +25,7 @@ function VisionBackground() {
           offsetX={0}
           offsetY={0}
           scale={1.08}
-          rotation={8}
+          rotation={-8}
           speed={0.35}
           colors={['hsl(18, 92%, 56%)', 'hsl(42, 96%, 54%)', 'hsl(332, 78%, 50%)']}
         />
