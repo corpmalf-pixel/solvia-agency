@@ -137,8 +137,6 @@ main,
   align-items: center;
   justify-content: center;
   padding: calc(var(--header-h) + 3rem) 2rem 4rem;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 
 .hero {
@@ -263,11 +261,9 @@ main,
 .vision {
   position: relative;
   min-height: 100svh;
-  margin-top: 0;
-  padding-top: calc(var(--header-h) + 3rem);
+  padding: calc(var(--header-h) + 3rem) 2rem 4rem;
   overflow: hidden;
   isolation: isolate;
-  box-shadow: none;
 }
 
 .vision-media {
@@ -304,14 +300,11 @@ main,
   position: relative;
   z-index: 1;
   width: min(1100px, 100%);
+  min-height: calc(100svh - var(--header-h) - 7rem);
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.hero + .vision {
-  transform: translateY(0);
 }
 
 .vision-centered-block {
@@ -540,8 +533,8 @@ main,
 
 @media (max-width: 720px) {
   .vision {
-    margin-top: 0;
-    padding-top: calc(var(--header-h) + 2.4rem);
+    min-height: 100svh;
+    padding: calc(var(--header-h) + 2.4rem) 1.1rem 3rem;
   }
 
   .site-header {
@@ -583,11 +576,22 @@ main,
     line-height: 1.6;
   }
 
+  .vision-shell {
+    min-height: calc(100svh - var(--header-h) - 5.4rem);
+    width: 100%;
+  }
+
+  .vision-centered-block {
+    width: 100%;
+    gap: 1.2rem;
+  }
+
   .vision-title {
     font-size: clamp(1.8rem, 9vw, 2.6rem);
   }
 
   .vision-description {
+    max-width: 100%;
     font-size: 0.96rem;
     line-height: 1.8;
   }
