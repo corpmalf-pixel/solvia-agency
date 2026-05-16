@@ -259,11 +259,27 @@ main,
 }
 
 .vision {
+  position: relative;
   min-height: 100svh;
   background: #06070b;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.vision-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(5, 6, 10, 0.08) 0%, rgba(5, 6, 10, 0.14) 42%, rgba(5, 6, 10, 0.36) 100%),
+    linear-gradient(90deg, rgba(5, 6, 10, 0.14) 0%, rgba(5, 6, 10, 0.04) 38%, rgba(5, 6, 10, 0.08) 100%),
+    linear-gradient(135deg, rgba(10, 10, 15, 0.06), rgba(10, 10, 15, 0.02));
 }
 
 .vision-shell {
+  position: relative;
+  z-index: 1;
   width: min(1240px, 100%);
   margin: 0 auto;
   display: flex;

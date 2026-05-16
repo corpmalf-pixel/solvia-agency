@@ -28,6 +28,7 @@ export function VisionSection() {
 
   return (
     <section id="vision" ref={sectionRef} className="panel vision reveal reveal-visible">
+      <div className="vision-overlay" aria-hidden="true"></div>
       <div className="vision-shell">
         <div className="vision-feature-row">
           <motion.div style={{ y: textY }} className="vision-copy-block">
