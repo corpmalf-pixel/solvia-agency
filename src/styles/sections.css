@@ -300,19 +300,26 @@ main,
 
 .vision-title {
   margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(3.4rem, 7vw, 6.6rem);
+  font-family: 'Mochi Green', var(--serif);
+  font-size: clamp(2rem, 4.2vw, 3.3rem);
   line-height: 0.95;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
 .vision-description {
-  margin: 0;
   max-width: 34rem;
   font-size: clamp(1rem, 1.3vw, 1.12rem);
   line-height: 1.9;
   color: rgba(240, 237, 232, 0.76);
+}
+
+.vision-description p {
+  margin: 0;
+}
+
+.vision-description p + p {
+  margin-top: 1rem;
 }
 
 .vision-image-wrap {
@@ -566,7 +573,7 @@ main,
   }
 
   .vision-title {
-    font-size: clamp(2.6rem, 13vw, 4.4rem);
+    font-size: clamp(1.8rem, 9vw, 2.6rem);
   }
 
   .vision-description {

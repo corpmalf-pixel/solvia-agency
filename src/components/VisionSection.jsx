@@ -1,12 +1,15 @@
 import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import visionImage from '../assets/images/ChatGPT Image 16 mai 2026, 17_11_50.png'
+
+const visionImage = '/images/services/ChatGPT%20Image%2016%20mai%202026,%2017_19_06.png'
 
 const visionSection = {
   id: 'vision',
   title: 'Vision',
-  description:
-    "La plupart des entreprises perdent des clients avant même d'avoir parlé. Solvia construit l'expérience que vos clients vivent avant de vous rencontrer celle qui justifie vos tarifs, légitime votre expertise et conclut les deals avant même que vous n'ayez à parler.",
+  description: [
+    "La plupart des entreprises perdent des clients avant même d'avoir parlé.",
+    "Solvia construit l'expérience que vos clients vivent avant de vous rencontrer celle qui justifie vos tarifs, légitime votre expertise et conclut les deals avant même que vous n'ayez à parler.",
+  ],
   imageUrl: visionImage,
 }
 
@@ -33,9 +36,11 @@ export function VisionSection() {
         <div className="vision-feature-row">
           <motion.div style={{ y: textY }} className="vision-copy-block">
             <h2 className="vision-title">{visionSection.title}</h2>
-            <motion.p style={{ y: textY }} className="vision-description">
-              {visionSection.description}
-            </motion.p>
+            <motion.div style={{ y: textY }} className="vision-description">
+              {visionSection.description.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </motion.div>
           </motion.div>
 
           <motion.div
