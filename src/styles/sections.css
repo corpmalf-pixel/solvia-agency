@@ -261,16 +261,34 @@ main,
 .vision {
   position: relative;
   min-height: 100svh;
-  background: #06070b;
   overflow: hidden;
   isolation: isolate;
 }
 
-.vision-overlay {
+.vision-media {
   position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
+}
+
+.vision-paper-bg,
+.vision-media-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.vision-paper-bg {
+  z-index: 0;
+}
+
+.vision-paper-bg canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.vision-media-overlay {
   background:
     linear-gradient(180deg, rgba(5, 6, 10, 0.08) 0%, rgba(5, 6, 10, 0.14) 42%, rgba(5, 6, 10, 0.36) 100%),
     linear-gradient(90deg, rgba(5, 6, 10, 0.14) 0%, rgba(5, 6, 10, 0.04) 38%, rgba(5, 6, 10, 0.08) 100%),
