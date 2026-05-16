@@ -225,7 +225,7 @@ main,
 
 .hero-title {
   font-family: 'Mochi Green', var(--serif);
-  font-size: clamp(4rem, 9.6vw, 8.6rem);
+  font-size: clamp(3.2rem, 7.8vw, 7rem);
   max-width: 11.2ch;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.34);
   text-align: center;
@@ -461,7 +461,7 @@ main,
   }
 
   .hero-title {
-    font-size: clamp(3.4rem, 14vw, 5.3rem);
+    font-size: clamp(2.8rem, 11.5vw, 4.4rem);
     max-width: 100%;
   }
 
