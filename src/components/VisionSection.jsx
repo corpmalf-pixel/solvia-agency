@@ -25,7 +25,7 @@ function VisionBackground() {
           offsetX={0}
           offsetY={0}
           scale={1.08}
-          rotation={-8}
+          rotation={8}
           speed={0.35}
           colors={['hsl(18, 92%, 56%)', 'hsl(42, 96%, 54%)', 'hsl(332, 78%, 50%)']}
         />
