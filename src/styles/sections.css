@@ -289,7 +289,7 @@ main,
 
 .vision-feature-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 620px);
   gap: clamp(2rem, 6vw, 6rem);
   align-items: center;
 }
@@ -334,7 +334,7 @@ main,
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: 42% center;
+  object-position: center center;
   border-radius: 0;
   box-shadow: 0 20px 80px rgba(0, 0, 0, 0.34);
 }
