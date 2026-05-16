@@ -224,7 +224,7 @@ main,
 }
 
 .hero-title {
-  font-family: 'Mochi Green', var(--serif);
+  font-family: 'Bebas Regular', var(--serif);
   font-size: clamp(4rem, 9.6vw, 8.6rem);
   max-width: 11.2ch;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.34);
