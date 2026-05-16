@@ -29,10 +29,6 @@ export function VisionSection() {
   return (
     <section id="vision" ref={sectionRef} className="panel vision reveal reveal-visible">
       <div className="vision-shell">
-        <div className="vision-intro">
-          <p className="vision-kicker">Vision</p>
-        </div>
-
         <div className="vision-feature-row">
           <motion.div style={{ y: textY }} className="vision-copy-block">
             <h2 className="vision-title">{visionSection.title}</h2>
