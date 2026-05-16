@@ -1,6 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { GrainGradient } from '@paper-design/shaders-react'
+import { VisionSection } from './components/VisionSection'
 import { siteConfig } from './config/site'
 import './styles/base.css'
 import './styles/sections.css'
@@ -43,9 +44,14 @@ function App() {
         <a className="brand" href="#hero" aria-label="Solvia home">
           {siteConfig.brand}
         </a>
-        <a className="nav-link" href="#contact">
-          Contact
-        </a>
+        <div className="header-nav-group">
+          <a className="nav-link" href="#vision">
+            Vision
+          </a>
+          <a className="nav-link" href="#contact">
+            Contact
+          </a>
+        </div>
       </header>
 
       <main>
@@ -69,6 +75,8 @@ function App() {
             ↓
           </a>
         </section>
+
+        <VisionSection />
 
         <section id="statement" className="panel statement reveal">
           <div className="statement-inner">

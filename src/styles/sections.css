@@ -66,6 +66,12 @@
   border-bottom: 1px solid transparent;
 }
 
+.header-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
 .site-header.is-scrolled {
   background: rgba(10, 10, 15, 0.78);
   backdrop-filter: blur(14px);
@@ -252,6 +258,77 @@ main,
   animation: pulse 1.8s ease-in-out infinite;
 }
 
+.vision {
+  min-height: 100svh;
+  background: linear-gradient(180deg, rgba(8, 8, 12, 0.98) 0%, rgba(12, 12, 18, 0.96) 100%);
+}
+
+.vision-shell {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.vision-intro {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.vision-kicker {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 232, 0.56);
+}
+
+.vision-feature-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.vision-copy-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.vision-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(3.4rem, 7vw, 6.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.vision-description {
+  margin: 0;
+  max-width: 34rem;
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  line-height: 1.9;
+  color: rgba(240, 237, 232, 0.76);
+}
+
+.vision-image-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.vision-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.34);
+}
+
 .statement {
   background: rgba(17, 17, 24, 0.68);
 }
@@ -434,6 +511,16 @@ main,
   }
 }
 
+@media (max-width: 900px) {
+  .vision-feature-row {
+    grid-template-columns: 1fr;
+  }
+
+  .vision-description {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 720px) {
   .site-header {
     padding: 1rem 1.1rem;
@@ -443,6 +530,10 @@ main,
   .brand,
   .nav-link {
     font-size: 0.72rem;
+  }
+
+  .header-nav-group {
+    gap: 0.9rem;
   }
 
   .panel {
@@ -468,6 +559,24 @@ main,
   .eyebrow {
     max-width: 18rem;
     line-height: 1.6;
+  }
+
+  .vision-shell {
+    gap: 2rem;
+  }
+
+  .vision-title {
+    font-size: clamp(2.6rem, 13vw, 4.4rem);
+  }
+
+  .vision-description {
+    font-size: 0.96rem;
+    line-height: 1.8;
+  }
+
+  .vision-image {
+    aspect-ratio: 1 / 1.12;
+    border-radius: 1rem;
   }
 
   .statement-quote {
