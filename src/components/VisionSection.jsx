@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
-const visionImage = '/images/services/ChatGPT%20Image%2016%20mai%202026,%2017_40_57.png'
+const visionImage = '/images/services/ChatGPT%20Image%2016%20mai%202026,%2017_52_02.png'
 
 const visionSection = {
   id: 'vision',
