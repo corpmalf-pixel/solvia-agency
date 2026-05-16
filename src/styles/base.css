@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Mono:wght@400;500&display=swap');
 
+@font-face {
+  font-family: 'Mochi Green';
+  src: url('/fonts/Mochi%20Green.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg: #0a0a0f;
   --bg-alt: #111118;
