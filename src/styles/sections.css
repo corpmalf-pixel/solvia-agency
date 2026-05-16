@@ -261,8 +261,13 @@ main,
 .vision {
   position: relative;
   min-height: 100svh;
+  margin-top: -12svh;
+  padding-top: calc(var(--header-h) + 7rem);
+  border-top-left-radius: 2.6rem;
+  border-top-right-radius: 2.6rem;
   overflow: hidden;
   isolation: isolate;
+  box-shadow: 0 -18px 60px rgba(0, 0, 0, 0.18);
 }
 
 .vision-media {
@@ -303,6 +308,15 @@ main,
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero + .vision {
+  transform: translateY(48px);
+  transition: transform 0.45s ease-out;
+}
+
+.hero + .vision.reveal-visible {
+  transform: translateY(0);
 }
 
 .vision-centered-block {
@@ -530,6 +544,13 @@ main,
 }
 
 @media (max-width: 720px) {
+  .vision {
+    margin-top: -8svh;
+    padding-top: calc(var(--header-h) + 4.5rem);
+    border-top-left-radius: 1.4rem;
+    border-top-right-radius: 1.4rem;
+  }
+
   .site-header {
     padding: 1rem 1.1rem;
     gap: 1rem;
