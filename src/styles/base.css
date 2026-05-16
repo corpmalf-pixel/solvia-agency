@@ -33,6 +33,7 @@
 
 html {
   background: var(--bg);
+  scroll-snap-type: y mandatory;
 }
 
 body {
