@@ -139,6 +139,13 @@ main,
   padding: calc(var(--header-h) + 3rem) 2rem 4rem;
 }
 
+.hero,
+.vision {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
 .hero {
   position: relative;
   min-height: 100svh;
@@ -305,6 +312,10 @@ main,
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.hero + .vision .vision-centered-block {
+  transition: transform 0.42s ease-out, opacity 0.42s ease-out;
 }
 
 .vision-centered-block {
@@ -532,6 +543,11 @@ main,
 }
 
 @media (max-width: 720px) {
+  .hero,
+  .vision {
+    will-change: auto;
+  }
+
   .vision {
     min-height: 100svh;
     padding: calc(var(--header-h) + 2.4rem) 1.1rem 3rem;
@@ -642,8 +658,10 @@ main,
 
 @media (prefers-reduced-motion: reduce) {
   .title-line,
-  .reveal {
+  .reveal,
+  .vision-centered-block {
     opacity: 1;
     transform: none;
+    transition: none;
   }
 }

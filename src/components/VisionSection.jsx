@@ -43,8 +43,8 @@ export function VisionSection() {
     offset: ['start end', 'center start'],
   })
 
-  const textY = useTransform(scrollYProgress, [0, 1], [44, 0])
-  const textOpacity = useTransform(scrollYProgress, [0, 0.7], [0.22, 1])
+  const textY = useTransform(scrollYProgress, [0, 0.55], [70, 0])
+  const textOpacity = useTransform(scrollYProgress, [0, 0.42], [0, 1])
 
   return (
     <section id="vision" ref={sectionRef} className="panel vision reveal reveal-visible">
