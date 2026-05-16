@@ -1,7 +1,9 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { GrainGradient } from '@paper-design/shaders-react'
-import './style.css'
+import { siteConfig } from './config/site'
+import './styles/base.css'
+import './styles/sections.css'
 
 function GradientBackground() {
   return (
@@ -39,7 +41,7 @@ function App() {
 
       <header className="site-header" data-nav>
         <a className="brand" href="#hero" aria-label="Solvia home">
-          SOLVIA
+          {siteConfig.brand}
         </a>
         <a className="nav-link" href="#contact">
           Contact
@@ -50,12 +52,17 @@ function App() {
         <section id="hero" className="panel hero reveal reveal-visible">
           <GradientBackground />
           <div className="hero-inner">
-            <h1 className="hero-title" aria-label="La première impression, ça se construit.">
-              <span className="title-line">La première impression,</span>
-              <span className="title-line">ça se construit.</span>
+            <p className="hero-center-label">{siteConfig.heroLabel}</p>
+            <h1 className="hero-title" aria-label={siteConfig.heroTitle.join(' ')}>
+              {siteConfig.heroTitle.map((line) => (
+                <span key={line} className="title-line">
+                  {line}
+                </span>
+              ))}
             </h1>
             <p className="eyebrow">
-              Based in Paris made for the world<span className="cursor" aria-hidden="true">_</span>
+              {siteConfig.heroEyebrow}
+              <span className="cursor" aria-hidden="true">_</span>
             </p>
           </div>
           <a className="scroll-indicator" href="#statement" aria-label="Descendre vers la suite">
@@ -65,43 +72,31 @@ function App() {
 
         <section id="statement" className="panel statement reveal">
           <div className="statement-inner">
-            <p className="statement-quote">Vos clients vous cherchent en ligne avant de vous appeler.</p>
-            <p className="statement-note">Votre site est votre premier commercial. On s'assure qu'il travaille bien.</p>
+            <p className="statement-quote">{siteConfig.statementQuote}</p>
+            <p className="statement-note">{siteConfig.statementNote}</p>
           </div>
         </section>
 
         <section id="services" className="panel services reveal">
           <div className="services-list" aria-label="Services Solvia">
-            <a className="service-row" href="#contact">
-              <span className="service-index">01</span>
-              <span className="service-name">Création de site vitrine</span>
-              <span className="service-arrow" aria-hidden="true">→</span>
-            </a>
-            <a className="service-row" href="#contact">
-              <span className="service-index">02</span>
-              <span className="service-name">Refonte & optimisation</span>
-              <span className="service-arrow" aria-hidden="true">→</span>
-            </a>
-            <a className="service-row" href="#contact">
-              <span className="service-index">03</span>
-              <span className="service-name">Sites e-commerce</span>
-              <span className="service-arrow" aria-hidden="true">→</span>
-            </a>
-            <a className="service-row" href="#contact">
-              <span className="service-index">04</span>
-              <span className="service-name">Stratégie de présence en ligne</span>
-              <span className="service-arrow" aria-hidden="true">→</span>
-            </a>
+            {siteConfig.services.map((service, index) => (
+              <a key={service} className="service-row" href="#contact">
+                <span className="service-index">{String(index + 1).padStart(2, '0')}</span>
+                <span className="service-name">{service}</span>
+                <span className="service-arrow" aria-hidden="true">→</span>
+              </a>
+            ))}
           </div>
         </section>
 
         <section id="why" className="panel why reveal">
           <div className="why-inner">
             <h2 className="section-title">
-              <span>À la hauteur</span>
-              <span>de ce que vous valez.</span>
+              {siteConfig.whyTitle.map((line) => (
+                <span key={line}>{line}</span>
+              ))}
             </h2>
-            <p className="why-copy">On ne crée pas des sites. On crée des premières impressions qui convertissent.</p>
+            <p className="why-copy">{siteConfig.whyCopy}</p>
           </div>
         </section>
 
@@ -109,10 +104,10 @@ function App() {
           <div className="contact-inner">
             <h2 className="section-title section-title-contact">Travaillons ensemble.</h2>
             <div className="contact-links">
-              <a href="tel:+33656874221">06 56 87 42 21</a>
-              <a href="mailto:solviaservice@gmail.com">solviaservice@gmail.com</a>
-              <a href="https://www.linkedin.com/search/results/all/?keywords=Solvia%20Agency" target="_blank" rel="noreferrer">
-                LinkedIn — Solvia Agency
+              <a href={siteConfig.contact.phoneHref}>{siteConfig.contact.phone}</a>
+              <a href={siteConfig.contact.emailHref}>{siteConfig.contact.email}</a>
+              <a href={siteConfig.contact.linkedinHref} target="_blank" rel="noreferrer">
+                {siteConfig.contact.linkedinLabel}
               </a>
             </div>
           </div>
