@@ -71,9 +71,6 @@ function App() {
               <span className="cursor" aria-hidden="true">_</span>
             </p>
           </div>
-          <a className="scroll-indicator" href="#statement" aria-label="Descendre vers la suite">
-            ↓
-          </a>
         </section>
 
         <VisionSection />
